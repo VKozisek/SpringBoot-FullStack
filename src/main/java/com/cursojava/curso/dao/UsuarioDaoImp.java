@@ -46,8 +46,10 @@ public class UsuarioDaoImp implements UsuarioDao{
     }
 
     @Override
-    public void editUsuario(Usuario usuario) {
+    public Usuario editUsuario(Usuario usuario) {
+        em.merge(usuario);
 
+        return null;
     }
 
     @Override
