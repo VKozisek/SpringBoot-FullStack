@@ -53,9 +53,12 @@ public class UsuarioController {
     }
 
     @RequestMapping(value = "api/usuario/{id}",method = RequestMethod.PUT)
-    public Usuario editarUsuario(@PathVariable Long id) {
+    public Usuario editarUsuario(@PathVariable Long id,
+                                 @RequestBody Usuario reqUsuario) {
         Usuario usuario = objUsuarioDao.getUsuario(id);
-        objUsuarioDao.editUsuario(usuario);
+        if(usuario != null){
+            objUsuarioDao.editUsuario(reqUsuario);
+        }
         return usuario;
     }
 

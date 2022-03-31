@@ -11,7 +11,7 @@ public interface UsuarioDao {
     Usuario deleteUsuario(Long id);
     void registrarUsuario(Usuario usuario);
 
-    void editUsuario(Usuario usuario);
+    Usuario editUsuario(Usuario reqUsuario);
 
     Usuario obtenerUsuarioXCredenciales(Usuario reqUsuario);
 }
